@@ -32,3 +32,25 @@ Track 4: Autopilot Agent
 ## License
 
 MIT
+
+## Day 2 Status
+
+Day 2 upgraded QuotePilot AI from simple Qwen inquiry extraction to a tool-using Autopilot Agent workflow.
+
+Added:
+
+- Product catalog lookup
+- Inventory check
+- Pricing calculator
+- Policy guard
+- Human approval checkpoint
+- Draft customer email generation
+- Workflow audit trail
+
+Current workflow:
+
+Customer inquiry → Qwen extraction → catalog lookup → inventory check → quote calculation → policy guard → human approval checkpoint → email draft.
+
+Safety rule:
+
+QuotePilot AI never sends customer emails without human approval.
