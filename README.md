@@ -54,3 +54,22 @@ Customer inquiry → Qwen extraction → catalog lookup → inventory check → 
 Safety rule:
 
 QuotePilot AI never sends customer emails without human approval.
+
+## Day 3 PDF-Only Status
+
+Day 3 added human-approved quote PDF generation.
+
+Completed:
+
+- Human approval to PDF workflow
+- Draft quote PDF generation
+- PDF download from Streamlit
+- Local audit-friendly quote artifact generation
+
+Alibaba OSS status:
+
+Alibaba OSS upload support is implemented in `quote_outputs.py`, but live OSS upload testing is pending Alibaba Cloud identity verification review. Until OSS credentials are available, the app gracefully falls back to local PDF generation and download.
+
+Safety rule:
+
+QuotePilot AI only generates/saves quote documents after a human approval checkpoint. It does not automatically send customer emails.

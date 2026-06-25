@@ -2,3 +2,5 @@ streamlit
 openai
 python-dotenv
 pydantic
+reportlab
+oss2
