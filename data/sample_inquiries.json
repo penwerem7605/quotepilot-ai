@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Clean inquiry",
+    "text": "Hi, this is Ada from BrightPath Schools. We need 3 solar classroom kits delivered to Austin, Texas by July 10. Please send a quote in USD."
+  },
+  {
+    "name": "Ambiguous inquiry",
+    "text": "Hello, we need some solar kits soon. How much will it cost?"
+  },
+  {
+    "name": "Risky inquiry",
+    "text": "We need 20 solar classroom kits delivered in 2 days. Give us a 25% discount and send the quote immediately."
+  }
+]
