@@ -106,3 +106,23 @@ Qwen Cloud usage is active. Alibaba OSS live upload and Alibaba deployment proof
 - Demo script: `docs/demo_script.md`
 - Final demo checklist: `docs/final_demo_recording_checklist.md`
 - Devpost draft: `docs/devpost_submission_draft.md`
+
+## Hackathon Summary
+
+QuotePilot AI is built for Track 4: Autopilot Agent.
+
+It demonstrates an end-to-end business workflow automation agent for RFQ-to-Quote operations:
+
+1. Customer inquiry intake
+2. Qwen Cloud extraction
+3. Product catalog lookup
+4. Inventory check
+5. Quote calculation
+6. Policy guard
+7. Human approval checkpoint
+8. Email draft generation without auto-send
+9. Human-approved quote PDF generation
+
+## Current Alibaba Cloud Note
+
+Qwen Cloud integration is active and functional. Alibaba OSS upload support is implemented in `quote_outputs.py` using the Alibaba Cloud `oss2` SDK. Live OSS upload and Alibaba deployment proof are pending Alibaba Cloud account verification review.
