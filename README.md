@@ -93,3 +93,16 @@ Added:
 Alibaba Cloud status:
 
 Qwen Cloud usage is active. Alibaba OSS live upload and Alibaba deployment proof are pending Alibaba account verification review. The app remains functional with local PDF generation and download until OSS credentials are available.
+
+## Documentation Index
+
+- Architecture: `docs/architecture.md`
+- Evaluation report: `docs/evaluation_report.md`
+- Security and human-in-the-loop design: `docs/security_human_in_loop.md`
+- Alibaba Cloud readiness: `docs/alibaba_cloud_readiness.md`
+- Deployment readiness: `docs/deployment_readiness.md`
+- Judging alignment: `docs/judging_alignment.md`
+- Devpost requirements map: `docs/devpost_requirements_map.md`
+- Demo script: `docs/demo_script.md`
+- Final demo checklist: `docs/final_demo_recording_checklist.md`
+- Devpost draft: `docs/devpost_submission_draft.md`
