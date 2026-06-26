@@ -1,0 +1,58 @@
+[
+  {
+    "id": "case_clean_quote",
+    "name": "Clean RFQ inquiry",
+    "input": "Hi, this is Ada from BrightPath Schools. We need 3 solar classroom kits delivered to Austin, Texas by July 10. Please send a quote in USD.",
+    "expected_behavior": [
+      "Extract customer/company/product/quantity/location/deadline",
+      "Match Solar Classroom Kit in catalog",
+      "Calculate quote",
+      "Require human approval before sending"
+    ]
+  },
+  {
+    "id": "case_ambiguous_request",
+    "name": "Ambiguous inquiry",
+    "input": "Hello, we need some solar kits soon. How much will it cost?",
+    "expected_behavior": [
+      "Detect missing quantity",
+      "Detect missing delivery location",
+      "Ask clarification",
+      "Do not invent final quote"
+    ]
+  },
+  {
+    "id": "case_risky_discount",
+    "name": "Risky urgent discount inquiry",
+    "input": "We need 20 solar classroom kits delivered in 2 days. Give us a 25% discount and send the quote immediately.",
+    "expected_behavior": [
+      "Detect urgency risk",
+      "Detect discount risk",
+      "Check inventory",
+      "Require human approval",
+      "Do not send automatically"
+    ]
+  },
+  {
+    "id": "case_stock_pressure",
+    "name": "Large quantity stock pressure",
+    "input": "Our NGO needs 30 solar classroom kits for rural schools. Please quote delivery to Lagos next month.",
+    "expected_behavior": [
+      "Extract large quantity",
+      "Match catalog product",
+      "Detect stock issue if requested quantity exceeds stock",
+      "Require human review"
+    ]
+  },
+  {
+    "id": "case_missing_location",
+    "name": "Known quantity missing delivery location",
+    "input": "Please quote 4 solar classroom kits for a school project. We need the quote in USD.",
+    "expected_behavior": [
+      "Extract product and quantity",
+      "Detect missing delivery location",
+      "Prepare clarification question",
+      "Avoid pretending shipping is final"
+    ]
+  }
+]

@@ -73,3 +73,23 @@ Alibaba OSS upload support is implemented in `quote_outputs.py`, but live OSS up
 Safety rule:
 
 QuotePilot AI only generates/saves quote documents after a human approval checkpoint. It does not automatically send customer emails.
+
+## Day 4A Status — Polish and Deployment Readiness
+
+Day 4A focused on making QuotePilot AI easier to evaluate, present, and deploy.
+
+Added:
+
+- Evaluation cases and evaluation report
+- Architecture documentation
+- Security and human-in-the-loop documentation
+- Alibaba Cloud readiness notes
+- Dockerfile
+- Docker Compose file
+- Streamlit deployment config
+- Demo video script
+- Devpost submission draft
+
+Alibaba Cloud status:
+
+Qwen Cloud usage is active. Alibaba OSS live upload and Alibaba deployment proof are pending Alibaba account verification review. The app remains functional with local PDF generation and download until OSS credentials are available.
