@@ -159,11 +159,67 @@ def render_current_record(record: Dict[str, Any]):
 
     st.success("Workflow loaded. Review the tabs below.")
 
-    col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Workflow State", workflow.get("workflow_state", "UNKNOWN"))
+    state = workflow.get("workflow_state", "UNKNOWN")
+    state_labels = {
+        "NEEDS_CLARIFICATION": "Needs Clarification",
+        "NEEDS_HUMAN_APPROVAL": "Needs Human Approval",
+        "QUOTE_DRAFTED": "Quote Drafted",
+        "APPROVED": "Approved",
+        "PDF_GENERATED": "PDF Generated",
+        "DONE": "Done",
+        "UNKNOWN": "Unknown",
+    }
+    state_explanations = {
+        "NEEDS_CLARIFICATION": "The customer request is missing important information. QuotePilot should ask a clarification question before finalizing the quote.",
+        "NEEDS_HUMAN_APPROVAL": "The quote workflow produced a draft, but a human must review it before any customer-facing action.",
+        "QUOTE_DRAFTED": "A draft quote has been prepared. Human review is still recommended before sending anything externally.",
+        "APPROVED": "A human has approved the draft for the next step.",
+        "PDF_GENERATED": "A human-approved quote PDF has been generated.",
+        "DONE": "The workflow has completed successfully.",
+        "UNKNOWN": "The workflow state is unknown. Review the audit log and tool calls.",
+    }
+    state_label = state_labels.get(state, state.replace("_", " ").title())
+    state_explanation = state_explanations.get(state, "Review the workflow details, tool calls, and policy guard output.")
+
+    st.subheader("Workflow summary")
+    st.info(f"**Current workflow state:** {state_label}  \n\n{state_explanation}")
+
+    summary_rows = [
+        {
+            "Checkpoint": "Workflow State",
+            "Result": state_label,
+            "Meaning": state_explanation,
+        },
+        {
+            "Checkpoint": "Approval Required",
+            "Result": "Yes" if workflow.get("approval_required") else "No",
+            "Meaning": "Human review is required before customer-facing action." if workflow.get("approval_required") else "No major approval blocker was detected, but external sending is still disabled in this demo.",
+        },
+        {
+            "Checkpoint": "Safe Auto-Send",
+            "Result": "No",
+            "Meaning": "QuotePilot never sends customer emails automatically. It only prepares drafts for human approval.",
+        },
+        {
+            "Checkpoint": "Quote Total",
+            "Result": money(quote.get("total", 0)),
+            "Meaning": "Draft quote amount calculated by deterministic pricing tools, not invented by the model.",
+        },
+    ]
+    st.table(summary_rows)
+
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Quote Total", money(quote.get("total", 0)))
     col2.metric("Approval Required", "YES" if workflow.get("approval_required") else "NO")
-    col3.metric("Quote Total", money(quote.get("total", 0)))
-    col4.metric("Safe Auto-Send", "NO")
+    col3.metric("Safe Auto-Send", "NO")
+
+    with st.expander("How to review this workflow", expanded=False):
+        st.write("1. **Qwen Extraction** shows what Qwen understood from the customer message.")
+        st.write("2. **Tool Calls** shows catalog lookup, inventory, pricing, policy guard, and email draft tools.")
+        st.write("3. **Quote Draft** shows the calculated quote lines and total.")
+        st.write("4. **Policy Guard** explains why approval or clarification is required.")
+        st.write("5. **Human Approval** lets a reviewer approve, revise, or reject the draft.")
+        st.write("6. **PDF + OSS** generates the approved quote PDF and uploads it to Alibaba OSS when configured.")
 
     tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
         [
