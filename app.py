@@ -320,7 +320,7 @@ if "current_record" not in st.session_state:
     st.session_state["current_record"] = None
 
 st.title("🤖 QuotePilot AI")
-st.caption("Track 4 Autopilot Agent — Day 3: quote PDF generation and Alibaba OSS readiness")
+st.caption("Track 4 Autopilot Agent — Qwen workflow automation with human approval, PDF output, and Alibaba OSS")
 
 with st.sidebar:
     st.header("System Status")
@@ -333,11 +333,11 @@ with st.sidebar:
         st.error("Qwen API key missing")
 
     st.divider()
-    st.header("Day 3 Outputs")
+    st.header("Track 4 Capabilities")
     st.write("✅ Qwen extraction")
     st.write("✅ Business tools")
     st.write("✅ Human approval checkpoint")
-    st.write("✅ Quote PDF generation")
+    st.write("✅ Human-approved quote PDF generation")
     if oss_is_configured():
         st.success("Alibaba OSS configured")
     else:
