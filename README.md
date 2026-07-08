@@ -126,3 +126,11 @@ It demonstrates an end-to-end business workflow automation agent for RFQ-to-Quot
 ## Current Alibaba Cloud Note
 
 Qwen Cloud integration is active and functional. Alibaba OSS upload support is implemented in `quote_outputs.py` using the Alibaba Cloud `oss2` SDK. Live OSS upload and Alibaba deployment proof are pending Alibaba Cloud account verification review.
+
+## Alibaba OSS Upload Status
+
+Alibaba Cloud OSS upload has been tested successfully after account verification and OSS activation.
+
+QuotePilot AI can now generate a human-approved quote PDF and upload it to Alibaba Cloud OSS under the `quotepilot/quotes/` path.
+
+The OSS integration is implemented in `quote_outputs.py` using the Alibaba Cloud `oss2` SDK.
