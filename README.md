@@ -134,3 +134,11 @@ Alibaba Cloud OSS upload has been tested successfully after account verification
 QuotePilot AI can now generate a human-approved quote PDF and upload it to Alibaba Cloud OSS under the `quotepilot/quotes/` path.
 
 The OSS integration is implemented in `quote_outputs.py` using the Alibaba Cloud `oss2` SDK.
+
+## Final Demo and Proof Links
+
+- Main demo video: https://youtu.be/fZE8YukbDWI
+- Alibaba deployment proof video: https://youtu.be/IQf7J5pdXdw
+- Live app URL: http://47.237.92.15:8501
+- Architecture diagram: `docs/architecture_diagram.svg`
+- Alibaba OSS integration code: `quote_outputs.py`
