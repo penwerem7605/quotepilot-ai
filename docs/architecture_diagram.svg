@@ -1,0 +1,101 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#0f172a"/>
+  <text x="700" y="55" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#ffffff">QuotePilot AI Architecture</text>
+  <text x="700" y="88" text-anchor="middle" font-family="Arial" font-size="16" fill="#cbd5e1">Qwen-powered Autopilot Agent for RFQ-to-Quote workflow automation</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#38bdf8"/>
+    </marker>
+    <style>
+      .box { fill:#1e293b; stroke:#38bdf8; stroke-width:2; rx:16; }
+      .safe { fill:#14532d; stroke:#22c55e; stroke-width:2; rx:16; }
+      .warn { fill:#7f1d1d; stroke:#f97316; stroke-width:2; rx:16; }
+      .cloud { fill:#312e81; stroke:#a78bfa; stroke-width:2; rx:16; }
+      .label { font-family:Arial; font-size:17px; fill:#ffffff; font-weight:700; }
+      .small { font-family:Arial; font-size:13px; fill:#cbd5e1; }
+      .tiny { font-family:Arial; font-size:12px; fill:#94a3b8; }
+      .arrow { stroke:#38bdf8; stroke-width:3; fill:none; marker-end:url(#arrow); }
+      .pending { stroke:#f97316; stroke-width:3; fill:none; stroke-dasharray:8 8; marker-end:url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="60" y="145" width="220" height="95" class="box"/>
+  <text x="170" y="182" text-anchor="middle" class="label">Customer Inquiry</text>
+  <text x="170" y="210" text-anchor="middle" class="small">Email / chat / RFQ text</text>
+
+  <rect x="340" y="145" width="240" height="95" class="box"/>
+  <text x="460" y="182" text-anchor="middle" class="label">Streamlit Dashboard</text>
+  <text x="460" y="210" text-anchor="middle" class="small">Tablet-friendly web app</text>
+
+  <rect x="650" y="125" width="260" height="120" class="cloud"/>
+  <text x="780" y="165" text-anchor="middle" class="label">Qwen Cloud</text>
+  <text x="780" y="193" text-anchor="middle" class="small">Inquiry understanding</text>
+  <text x="780" y="216" text-anchor="middle" class="small">Structured JSON extraction</text>
+
+  <rect x="990" y="145" width="270" height="95" class="box"/>
+  <text x="1125" y="182" text-anchor="middle" class="label">Structured Inquiry</text>
+  <text x="1125" y="210" text-anchor="middle" class="small">Products, quantity, risks</text>
+
+  <path d="M280 192 L340 192" class="arrow"/>
+  <path d="M580 192 L650 192" class="arrow"/>
+  <path d="M910 192 L990 192" class="arrow"/>
+
+  <rect x="95" y="335" width="220" height="100" class="box"/>
+  <text x="205" y="370" text-anchor="middle" class="label">Catalog Tool</text>
+  <text x="205" y="400" text-anchor="middle" class="small">Find matching SKU</text>
+
+  <rect x="370" y="335" width="220" height="100" class="box"/>
+  <text x="480" y="370" text-anchor="middle" class="label">Inventory Tool</text>
+  <text x="480" y="400" text-anchor="middle" class="small">Check stock and lead time</text>
+
+  <rect x="645" y="335" width="220" height="100" class="box"/>
+  <text x="755" y="370" text-anchor="middle" class="label">Pricing Tool</text>
+  <text x="755" y="400" text-anchor="middle" class="small">Subtotal, tax, shipping</text>
+
+  <rect x="920" y="335" width="220" height="100" class="warn"/>
+  <text x="1030" y="370" text-anchor="middle" class="label">Policy Guard</text>
+  <text x="1030" y="400" text-anchor="middle" class="small">Risk and approval rules</text>
+
+  <path d="M1125 240 C1125 285 205 285 205 335" class="arrow"/>
+  <path d="M315 385 L370 385" class="arrow"/>
+  <path d="M590 385 L645 385" class="arrow"/>
+  <path d="M865 385 L920 385" class="arrow"/>
+
+  <rect x="205" y="555" width="260" height="115" class="safe"/>
+  <text x="335" y="595" text-anchor="middle" class="label">Human Approval</text>
+  <text x="335" y="623" text-anchor="middle" class="small">Approve / revise / reject</text>
+  <text x="335" y="646" text-anchor="middle" class="small">No auto-send</text>
+
+  <rect x="570" y="555" width="260" height="115" class="box"/>
+  <text x="700" y="595" text-anchor="middle" class="label">Quote PDF Generator</text>
+  <text x="700" y="623" text-anchor="middle" class="small">ReportLab output</text>
+  <text x="700" y="646" text-anchor="middle" class="small">Downloadable quote</text>
+
+  <rect x="940" y="555" width="270" height="115" class="cloud"/>
+  <text x="1075" y="595" text-anchor="middle" class="label">Alibaba Cloud OSS</text>
+  <text x="1075" y="623" text-anchor="middle" class="small">Stores approved quote PDFs</text>
+  <text x="1075" y="646" text-anchor="middle" class="small">Object Storage Service</text>
+
+  <path d="M1030 435 C1030 505 335 505 335 555" class="arrow"/>
+  <path d="M465 612 L570 612" class="arrow"/>
+  <path d="M830 612 L940 612" class="arrow"/>
+
+  <rect x="140" y="750" width="275" height="85" class="box"/>
+  <text x="277" y="783" text-anchor="middle" class="label">Audit Records</text>
+  <text x="277" y="812" text-anchor="middle" class="small">Tool calls + workflow status</text>
+
+  <rect x="510" y="750" width="340" height="85" class="cloud"/>
+  <text x="680" y="783" text-anchor="middle" class="label">Alibaba ECS Deployment</text>
+  <text x="680" y="812" text-anchor="middle" class="small">Docker + Streamlit on ECS</text>
+
+  <rect x="945" y="750" width="320" height="85" class="warn"/>
+  <text x="1105" y="783" text-anchor="middle" class="label">Safety Boundary</text>
+  <text x="1105" y="812" text-anchor="middle" class="small">External actions require approval</text>
+
+  <path d="M1030 435 C1030 705 277 705 277 750" class="arrow"/>
+  <path d="M700 670 L700 750" class="arrow"/>
+  <path d="M335 670 C335 720 1105 720 1105 750" class="arrow"/>
+
+  <text x="700" y="875" text-anchor="middle" class="tiny">QuotePilot AI: Qwen reasoning + deterministic business tools + human approval + PDF output + Alibaba OSS/ECS deployment</text>
+</svg>
